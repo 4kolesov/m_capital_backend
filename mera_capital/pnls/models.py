@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Calculation(models.Model):
+    '''Модель для создания расчета Pnl, Index PnL, курса доллара, активов.'''
+
     date = models.DateTimeField(
         verbose_name='Дата расчета',
         auto_now_add=True

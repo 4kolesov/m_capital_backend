@@ -1,4 +1,3 @@
-import requests
 from decimal import Decimal
 
 from mera_capital.celery import app
@@ -15,7 +14,10 @@ def previous_calc():
 
 @app.task
 def calculation():
-    '''Расчет Pnl, Index PnL, курса доллара, активов. Сохранение в базу.'''
+    '''
+    Расчет Pnl, Index PnL, курса доллара, активов каждые 10 секунд.
+    Сохранение в базу.
+    '''
     previous_calculation = previous_calc()
     rate = get_dollar_rate()
     balance = get_balance()
@@ -36,6 +38,7 @@ def calculation():
 
 @app.task
 def update_token():
+    '''Обновление токена каждые 890 секунд.'''
     with open('./.env', 'w', encoding='utf-8') as file:
         token = get_token()
         print(f"TOKEN='{token}'", file=file)
