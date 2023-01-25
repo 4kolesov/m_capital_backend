@@ -26,4 +26,4 @@
     │   └── manage.py
     ├── .env.example --> секретные ключи
     ├── README.md
-    └── requirements.txt``
+    └── requirements.txt
