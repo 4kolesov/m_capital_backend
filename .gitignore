@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+mera_capital/celerybeat-schedule.bak
+mera_capital/celerybeat-schedule.dat
+mera_capital/celerybeat-schedule.dir
