@@ -1,11 +1,6 @@
- {% comment %} <form method="post" action="{% url 'users:signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Зарегистрироваться">
-</form> {% endcomment %}
-
 <form method="post" action="{% url 'index' %}">
   {% csrf_token %}
-  {{ form }}
+  <p>Начало периода: {{ form.start_date }}<p/>
+  <p>Конец периода: {{ form.finish_date }}<p/>
 <input type = "submit" value = "Показать">
 </form>

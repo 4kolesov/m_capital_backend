@@ -3,7 +3,6 @@ import requests
 
 from django.shortcuts import render
 from dotenv import load_dotenv
-from pprint import pprint
 
 
 # только для токена, чтобы не рисковать основными секретными данными

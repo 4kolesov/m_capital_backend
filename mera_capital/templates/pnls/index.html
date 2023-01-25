@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Тестовое задание для Мера Капитал{% endblock %}
 {% block content %}
-  <h2>Тестовое задание для Мера Капитал</h2>
-  {% include 'includes/form.html' %}
-  {{ summ }}
-  {{ pnl_index }}
-  {{ pnl_percent }}
-  {{ start_period }}
-  {{ finish_period }}
+  <h5>Чтобы выбрать период, введите даты в формате "2023-01-20 15:15"</h5>
+  <p>{% include 'includes/form.html' %}<p/>
+    <div>Статистика:<div/>
+  <div>PnL: {{ summ|floatformat:'-5' }}<div/>
+  <div>Index PnL: {{ pnl_index|floatformat:'-5' }}<div/>
+  <div>PnL %: {{ pnl_percent|floatformat:'-5' }}<div/>
+  <div>Начало периода: {{ start_period }}<div/>
+  <div>Конец периода: {{ finish_period }}<div/>
 {% endblock %}
