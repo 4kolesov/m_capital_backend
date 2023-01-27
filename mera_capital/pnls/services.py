@@ -40,4 +40,4 @@ def get_balance():
 def get_dollar_rate():
     '''Получаение курса доллара относительно биткоина.'''
     url = 'https://test.deribit.com/api/v2/public/get_index_price?index_name=btc_usd'
-    return(requests.get(url).json().get('result').get('index_price'))
+    return requests.get(url).json().get('result').get('index_price')
