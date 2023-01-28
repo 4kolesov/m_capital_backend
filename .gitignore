@@ -97,6 +97,9 @@ __pypackages__/
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
+mera_capital/celerybeat-schedule.bak
+mera_capital/celerybeat-schedule.dat
+mera_capital/celerybeat-schedule.dir
 
 # SageMath parsed files
 *.sage.py
@@ -127,7 +130,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-mera_capital/celerybeat-schedule.bak
-mera_capital/celerybeat-schedule.dat
-mera_capital/celerybeat-schedule.dir
