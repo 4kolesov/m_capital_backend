@@ -11,10 +11,10 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'create_calculation': {
         'task': 'pnls.tasks.calculation',
-        'schedule': 10
+        'schedule': 10,
     },
     'update_token': {
         'task': 'pnls.tasks.update_token',
-        'schedule': 890
+        'schedule': 890,
     }
 }

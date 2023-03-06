@@ -1,8 +1,8 @@
 from decimal import Decimal
 
 from mera_capital.celery import app
-from .models import Calculation
-from .services import get_token, get_balance, get_dollar_rate
+from pnls.models import Calculation
+from pnls.services import get_token, get_balance, get_dollar_rate
 
 
 def previous_calc():

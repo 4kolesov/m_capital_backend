@@ -1,8 +1,8 @@
 from django.db.models import Sum
 from django.shortcuts import render
 
-from .forms import DateForm
-from .models import Calculation
+from pnls.forms import DateForm
+from pnls.models import Calculation
 
 
 def index(request):
@@ -47,7 +47,7 @@ def index(request):
             'pnl_index': period_pnl_index,
             'pnl_percent': period_pnl_percent,
             'start_period': start_date,
-            'finish_period': finish_date
+            'finish_period': finish_date,
         }
         return render(request, 'pnls/index.html', context)
     else:
@@ -57,6 +57,6 @@ def index(request):
             'pnl_index': pnl_index,
             'pnl_percent': pnl_percent,
             'start_period': start.date,
-            'finish_period': finish.date
+            'finish_period': finish.date,
         }
         return render(request, 'pnls/index.html', context)

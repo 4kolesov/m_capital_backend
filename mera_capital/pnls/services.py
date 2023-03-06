@@ -19,7 +19,7 @@ def get_token():
     params = {
         'client_id': f'{CLIENT_ID}',
         'client_secret': f'{CLIENT_SECRET}',
-        'grant_type': 'client_credentials'
+        'grant_type': 'client_credentials',
     }
     response = requests.get(url, params=params)
     return response.json().get('result').get('access_token')
@@ -31,7 +31,7 @@ def get_balance():
     auth = {'Authorization': f'Bearer {TOKEN}'}
     params = {
         'currency': 'BTC',
-        'extended': 'true'
+        'extended': 'true',
     }
     response = requests.get(url, headers=auth, params=params)
     return response.json().get('result').get('balance')

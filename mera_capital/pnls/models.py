@@ -6,27 +6,27 @@ class Calculation(models.Model):
 
     date = models.DateTimeField(
         verbose_name='Дата расчета',
-        auto_now_add=True
+        auto_now_add=True,
     )
     rate = models.DecimalField(
         verbose_name='Курс доллара к биткоину',
         max_digits=50,
-        decimal_places=2
+        decimal_places=2,
     )
     net_assets = models.DecimalField(
         verbose_name='Стоимость чистых активов',
         max_digits=50,
-        decimal_places=4
+        decimal_places=4,
     )
     pnl = models.DecimalField(
         verbose_name='Прибыль / убыток',
         max_digits=50,
-        decimal_places=4
+        decimal_places=4,
     )
     index_pnl = models.DecimalField(
         verbose_name='Отношение чистых активов',
         max_digits=50,
-        decimal_places=28
+        decimal_places=28,
     )
 
     class Meta:
@@ -36,6 +36,6 @@ class Calculation(models.Model):
 
     def __str__(self) -> str:
         return (
-        f'Дата: {self.date},'
+        f'Дата: {self.date},\n'
         f'PnL: {self.pnl}, Index PnL: {self.index_pnl}'
         )
