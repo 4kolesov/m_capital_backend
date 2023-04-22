@@ -1,16 +1,19 @@
+from __future__ import annotations
 from decimal import Decimal
+
 
 from mera_capital.celery import app
 from pnls.models import Calculation
 from pnls.services import get_token, get_balance, get_dollar_rate
 
 
-def previous_calc():
+def previous_calc() -> Calculation | None:
     '''Получаение последнего расчета из базы данных.'''
     try:
         return Calculation.objects.latest('id')
     except Calculation.DoesNotExist:
         return None
+
 
 @app.task
 def calculation():
@@ -36,8 +39,9 @@ def calculation():
         index_pnl=index_pnl,
     )
 
+
 @app.task
-def update_token():
+def update_token() -> None:
     '''Обновление токена каждые 890 секунд.'''
     with open('./.env', 'w', encoding='utf-8') as file:
         token = get_token()

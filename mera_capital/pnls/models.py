@@ -36,6 +36,6 @@ class Calculation(models.Model):
 
     def __str__(self) -> str:
         return (
-        f'Дата: {self.date},\n'
-        f'PnL: {self.pnl}, Index PnL: {self.index_pnl}'
+            f'Дата: {self.date},\n'
+            f'PnL: {self.pnl}, Index PnL: {self.index_pnl}'
         )
